@@ -36,8 +36,19 @@ router.post('/register', (req, res) => {
     }
 })
 
-router.post('/logIn', (req,res) => {
-   
+router.post('/logIn', async (req,res) => {
+   const username = req.body.username
+   const password = req.body.password
+
+   const user = await db.one('SELECT user_id, username, password FROM users WHERE username = $1', [username])
+
+   let passwordResult = await bcrypt.compare(password, user.password)
+
+   if (passwordResult) {
+       req.session.userId = user.user_id
+       console.log(req.session.userId)
+       res.render('home')
+   }
 })
 
 

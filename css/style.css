@@ -25,14 +25,43 @@ body {
 
 #usernameInput {
     margin-bottom: 10px;
+    width: 175px;
+}
+
+.passwordInputCont {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    width: 100%;
 }
 
 #passwordInput {
     margin-bottom: 10px;
+    width: 175px;
+    position: relative;
+    left: 9px;
 }
+
+#showPasswordBtn {
+    position: relative;
+    right: 15px;
+    top: 2px;
+    cursor: pointer;
+}
+
 
 #confirmPasswordInput {
     margin-bottom: 10px;
+    width: 175px;
+    position: relative;
+    left: 9px;
+}
+
+#showConfirmPasswordBtn {
+    position: relative;
+    right: 15px;
+    top: 2px;
+    cursor: pointer;
 }
 
 #logInBtn {

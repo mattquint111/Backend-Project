@@ -5,6 +5,7 @@
       <meta name='viewport' content='width=device-width' initial-scale='1.0' maximum-scale='1.0'/>
       <title>Login/Register</title>
       <link rel="stylesheet" href="/css/style.css">
+      <script src="https://kit.fontawesome.com/bb485f7aec.js" crossorigin="anonymous"></script>
     </head> 
 
     <body> 
@@ -15,11 +16,16 @@
             {{! username contains letters and numbers only }}
             <input type='text' name='username' id='usernameInput' placeholder="Username" pattern="[A-Za-z0-9]+">
             {{! password must contain 8 or more chars that are of at least one number, and one uppercase and lowercase letter }}
-            <input type="text" name='password' id="passwordInput" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+            <div class="passwordInputCont">
+                <input type="password" name='password' id="passwordInput" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+                <i id="showPasswordBtn" class="far fa-eye"></i>
+            </div>
             <button id="logInBtn">Log In</button>
         </form>
         <a href="/register"><button>Create New User</button></a>
+
     </div>
-        
+
+        <script src="/js/index.js"></script>
     </body>
 </html>
