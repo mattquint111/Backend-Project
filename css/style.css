@@ -1,0 +1,40 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#signInCont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#signInLabel {
+    margin-bottom: 20px;
+}
+
+#signInInput {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#usernameInput {
+    margin-bottom: 10px;
+}
+
+#passwordInput {
+    margin-bottom: 10px;
+}
+
+#confirmPasswordInput {
+    margin-bottom: 10px;
+}
+
+#logInBtn {
+    margin-bottom: 20px;
+}

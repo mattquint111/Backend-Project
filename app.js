@@ -1,12 +1,12 @@
-// modules
+// imported modules
 const express = require('express')
 const app = express()
 const mustacheExpress = require('mustache-express')
 const session = require('express-session')
-const bodyParser = require('body-parser')
+const indexRoutes = require('./routes/index')
 
 // middleware
-app.use(bodyParser.urlencoded({extended: false}))
+app.use(express.urlencoded())
 app.use('/css', express.static('css'))
 app.use('/js', express.static('js'))
 app.use(session({
@@ -14,6 +14,7 @@ app.use(session({
     resave: false,
     saveUninitialized: true
 }))
+app.use('/', indexRoutes)
 
 // view engine (mustache)
 app.engine('mustache', mustacheExpress())
@@ -25,6 +26,3 @@ app.listen(3000, () => {
     console.log("Server is running...")
 })
 
-app.get('/', (req,res) => {
-    res.render('index')
-})
